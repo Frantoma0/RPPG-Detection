@@ -1049,11 +1049,11 @@ def main():
 
         col1, col2 = st.columns(2)
         with col1:
-            start_btn = st.button("Start", type="primary", use_container_width=True)
+            start_btn = st.button("Start", type="primary")
         with col2:
-            stop_btn = st.button("Stop", type="secondary", use_container_width=True)
+            stop_btn = st.button("Stop", type="secondary")
 
-        calibrate_btn = st.button("Calibrate (5s)", use_container_width=True)
+        calibrate_btn = st.button("Calibrate (5s)")
 
         st.divider()
 
@@ -1130,7 +1130,7 @@ def main():
 
         if frame is not None:
             # Display video
-            video_placeholder.image(frame, channels="BGR", use_container_width=True)
+            video_placeholder.image(frame, channels="BGR")
 
             # Update metrics
             hr_color = "normal" if 60 <= state.heart_rate <= 100 else "off"
