@@ -49,8 +49,10 @@ try:
     TORCH_GPU = torch.cuda.is_available()
     if TORCH_GPU and not GPU_AVAILABLE:
         print(f"[GPU] PyTorch CUDA enabled - {torch.cuda.get_device_name(0)}")
-except ImportError:
-    pass
+except (ImportError, OSError, Exception):
+    # PyTorch may be corrupted or incompletely installed - skip it
+    torch = None
+    TORCH_GPU = False
 
 # MediaPipe
 MEDIAPIPE_AVAILABLE = False
