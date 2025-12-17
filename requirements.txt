@@ -1,24 +1,62 @@
-# rPPG Lie Detection System - Requirements
-# Optimized for NVIDIA RTX 4070 + AMD Ryzen 9 HX
+# rPPG Lie Detection System v3.0 - Requirements
+# Optimized for NVIDIA RTX 4070 Laptop GPU
 
-# Core
-flask>=2.3.0
-flask-socketio>=5.3.0
-eventlet>=0.33.0
-
-# Computer Vision
-opencv-python>=4.8.0
-mediapipe>=0.10.0
-
-# Signal Processing
+# ============================================
+# CORE DEPENDENCIES
+# ============================================
+streamlit>=1.28.0
 numpy>=1.24.0
 scipy>=1.11.0
 
-# Optional: GPU Acceleration (CUDA)
-# Uncomment if you have CUDA installed:
-# opencv-python-headless
-# cupy-cuda12x
+# ============================================
+# COMPUTER VISION
+# ============================================
+opencv-python>=4.8.0
+mediapipe>=0.10.0
 
-# For better async performance
-gevent>=23.0.0
-gevent-websocket>=0.10.1
+# ============================================
+# GPU ACCELERATION (NVIDIA RTX 4070)
+# ============================================
+# CuPy for CUDA 12.x (RTX 4070 compatible)
+cupy-cuda12x>=12.0.0
+
+# PyTorch with CUDA support (alternative GPU backend)
+# Install with: pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+torch>=2.1.0
+
+# ============================================
+# VISUALIZATION
+# ============================================
+plotly>=5.17.0
+
+# ============================================
+# OPTIONAL: Legacy Flask support
+# ============================================
+# flask>=2.3.0
+# flask-socketio>=5.3.0
+# eventlet>=0.33.0
+# gevent>=23.0.0
+# gevent-websocket>=0.10.1
+
+# ============================================
+# INSTALLATION INSTRUCTIONS
+# ============================================
+#
+# For RTX 4070 GPU acceleration:
+#
+# 1. Install CUDA Toolkit 12.x from NVIDIA
+#    https://developer.nvidia.com/cuda-downloads
+#
+# 2. Install cuDNN for CUDA 12.x
+#    https://developer.nvidia.com/cudnn
+#
+# 3. Install requirements:
+#    pip install -r requirements.txt
+#
+# 4. Install PyTorch with CUDA:
+#    pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+#
+# 5. Run the application:
+#    streamlit run rppg_streamlit.py
+#
+# ============================================
